@@ -1,0 +1,35 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE:  singleEndAlignmentBWA.sh
+# 
+#         USAGE:  ./singleEndAlignmentBWA.sh 
+# 
+#   DESCRIPTION:  
+# 
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR: Nam Tran (), namtran@ucla.edu
+#  ORGANIZATION: ICNN, UCLA
+#       CREATED: 07/26/2012 02:33:53 PM PDT
+#      REVISION:  ---
+#===============================================================================
+
+#$ -V
+#$ -b y
+#$ -cwd
+#$ -l h_data=4G
+
+set -e
+source error_handling
+script_start
+
+
+
+script_end
+
+
+
+

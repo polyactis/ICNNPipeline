@@ -1,0 +1,1 @@
+../GenSeq/bed2wig.sh

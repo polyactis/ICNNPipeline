@@ -1,0 +1,1 @@
+../GenSeq/manySam2Bam.sh

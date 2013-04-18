@@ -1,0 +1,8 @@
+name <- read.table(nameList,colClasses="character")
+
+N <- dim(name)[1]
+
+for (i in 1:N) {
+  print(name[i,1])
+}
+  

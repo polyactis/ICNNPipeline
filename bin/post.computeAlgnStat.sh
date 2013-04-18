@@ -1,0 +1,1 @@
+../RNA-seq/post.computeAlgnStat.sh

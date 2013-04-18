@@ -1,0 +1,1 @@
+../GenSeq/make3WigglesFromAlgn.sh

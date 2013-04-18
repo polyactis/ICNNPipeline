@@ -1,0 +1,92 @@
+\documentclass[letterpaper,10pt,landscape]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{rotating}
+
+\pagestyle{empty}
+%`\addtolength{\topmargin}{-1in}
+%\usepackage[active]{srcltx}
+
+\title{RNA-seq}
+%\author{}
+
+\thispagestyle{empty}
+
+\begin{document}
+\maketitle
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{baseQuality.eps}
+\caption{\small Distribution of Phred quality scores at each base. The boxs show the median, the lower and upper quartile.}
+\end{figure}
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{nucleotide.eps}
+\caption{\small Distribution of A(brown)/C(green)/G(blue)/T(yellow)/N(red) at each base.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{duplicate_cum_prob.eps}
+\caption{\small Accumulative percentage of duplicated reads.}
+\end{figure}
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{hitCount.eps}
+\caption{\small Distribution of hit counts of sequenced reads. A hit count of a sequence is the number of its alignments to the reference genomes}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{repeat.eps}
+\caption{\small Proportion of alignments into repeats, broken down by the hit counts. The repetitive regions are given by the RepMask table downloaded from the UCSC genome browser.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{chromHit.eps}
+\caption{\small Distribution of unique alignments across the chromosomes.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{mismatch.eps}
+\caption{\small Distribution of mismatches among unique alignments.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{coverage.eps}
+\caption{\small Coverage (by unique alignments), broken down by genomic regions.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{rRNA_repeat_etc.eps}
+\caption{\small Overall coverage at major genomic regions (in \% of the total input sequence).}
+\end{figure}
+
+%\begin{figure}[!ht]
+%\centering
+%\includegraphics[width=\textwidth]{qqnorm.eps}
+%\caption{\small Comparing log(RPKM) to normal distribution.}
+%\end{figure}
+%
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{rpkmBoxplot.eps}
+\caption{\small Comparing distribution of log(RPKM)}
+\end{figure}
+
+%\begin{figure}[!ht]
+%\centering
+%\includegraphics[width=\textwidth]{rpkmScatter.eps}
+%\caption{\small Relating log(RPKM) of samples - Scatterplots}
+%\end{figure}
+%
+\end{document}          

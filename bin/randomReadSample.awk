@@ -1,0 +1,1 @@
+../GenSeq/randomReadSample.awk

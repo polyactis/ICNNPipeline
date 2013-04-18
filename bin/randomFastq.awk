@@ -1,0 +1,1 @@
+../GenSeq/randomFastq.awk

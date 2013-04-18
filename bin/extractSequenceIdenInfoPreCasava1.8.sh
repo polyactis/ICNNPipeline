@@ -1,0 +1,1 @@
+/u/home/eeskin/namtran/PIPELINE/DNA-seq-0.1.2/extractSequenceIdenInfoPreCasava1.8.sh

@@ -1,0 +1,9 @@
+chromHit <- as.matrix(read.table("chromHitCount.tsv",sep="",row.names=1))
+chi <- chisq.test(chromHit[,1],p=chromHit[,2]/sum(as.numeric(chromHit[,2])))
+
+x <- rep(0,2)
+x[1] <- chi$statistic
+x[2] <- chi$p.value
+x <- as.matrix(x)
+rownames(x) <- c("X-squared","X-p.value")
+write.table(x,file="chromHit.X-squared",quote=FALSE,sep="\t",col.names=FALSE)

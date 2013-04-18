@@ -1,0 +1,33 @@
+oneExperimentQualPlot <- function(nameList) {
+
+#list of file containing numerical values representing ACGT  
+name <- read.table(nameList,colClasses=c("character"))
+N <- dim(name)[1]
+
+print(nameList)
+if (N <= 10) {
+    W <- 2
+    H <- ceiling(dim(name)[1]/2)
+}
+else {
+    W <- floor(sqrt(N))
+    H <- ceiling(N/W)
+}
+
+png(paste(nameList,"_nucleotide_boxplot.png",sep=""),width=480*W,height=300*H)
+par(mfrow=c(H,W))
+
+for (i in 1:dim(name)[1]) {
+	print(name[i,1])
+	base <- read.table(paste(name[i,1],".base",sep=""))
+    
+	base <- apply(base,2,function(x) { v = rep(0,6); for (i in 1:6) { v[i] <- sum(x == i-1) /length(x) ; v }})
+
+    print(summary(base))
+
+barplot(base[2:6,],names.arg=c(1:dim(base)[2]),col=c("orange","green","blue","yellow","red"),ylab='proportion of nucleotides',xlab='base No.',main=name[i,1],ylim=0:1)
+#legend(43,1,legend=c("N","T","G","C","A"),lwd=6,col=c("red","yellow","blue","green","orange"),box.lwd=0)
+}
+
+dev.off()
+}

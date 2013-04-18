@@ -1,0 +1,112 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+
+%\usepackage[active]{srcltx}
+
+\title{ChIP-seq}
+%\author{}
+
+
+\begin{document}
+\maketitle
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth,height=0.8\textheight]{baseQuality.eps}
+\caption{\small Distribution of Phred quality scores at each base. The boxplots show the median, the 1st and }
+\end{figure}
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth,height=0.8\textheight]{nucleotide.eps}
+\caption{\small Distribution of A(brown)/C(green)/G(blue)/T(yellow)/N(red) at each base.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{hitCount.eps}
+\caption{\small Distribution of hit counts of sequenced reads. A hit count of a sequence is the number of its alignments to the reference genomes}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{repeat.eps}
+\caption{\small Proportion of alignments into repeats, broken down by the hit counts. The repetitive regions are given by the RepMask table downloaded from the UCSC genome browser.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{chromHit.eps}
+\caption{\small Distribution of unique alignments across the chromosomes.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{mismatch.eps}
+\caption{\small Distribution of mismatches among unique alignments.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{duplicate_cum_prob.eps}
+\caption{\small Cummulate probability ($P(x \le x_0)$) of duplicate counts, on log-log scale. The x-axis shows the number of duplications. The y-axis shows the proportion of total reads have at most a certain number of duplications.}
+\end{figure}
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth,height=0.8\textheight]{forward_point_TSS_bind.eps}
+\caption{\small Total read count at each base pair, 2500bp upstream and dowstream of TSS, on the forward strand. The read counts are aggregated across all the genes}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{forward_line_TSS_bind.eps}
+\caption{\small Total read count at each base pair, 2500bp upstream and dowstream of TSS, on the forward strand. The read counts are aggregated across all the genes. The read count is smoothed using a window of 100 bp and a sliding step of 25 bp.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth,height=0.8\textheight]{reverse_point_TSS_bind.eps}
+\caption{\small Total read count at each base pair, 2500bp upstream and dowstream of TSS, on the reverse strand. The read counts are aggregated across all the genes}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{reverse_line_TSS_bind.eps}
+\caption{\small Total read count at each base pair, 2500bp upstream and dowstream of TSS, on the reverse strand. The read counts are aggregated across all the genes. The read count is smoothed using a window of 100 bp and a sliding step of 25 bp.}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth,height=0.8\textheight]{combined_point_TSS_bind.eps}
+\caption{\small Total read count at each base pair, 2500bp upstream and dowstream of TSS, combined on both strands. The read counts are aggregated across all the genes}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{combined_line_TSS_bind.eps}
+\caption{\small Total read count at each base pair, 2500bp upstream and dowstream of TSS, combined on both strand. The read counts are aggregated across all the genes. The read count is smoothed using a window of 100 bp and a sliding step of 25 bp.}
+\end{figure}
+
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=\textwidth]{forward_gene_bind.eps}
+% \caption{\small Total read count inside the genes, at each base pair. The read counts are aggregated across all the genes. The x-axis shows the relative distance of a locus from the TSS, which is the real distance in base pair normalized by gene length.}
+% \end{figure}
+% 
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=\textwidth]{reverse_gene_bind.eps}
+% \caption{\small Total read count inside the genes, at each base pair. The read counts are aggregated across all the genes. The x-axis shows the relative distance of a locus from the TSS, which is the real distance in base pair normalized by gene length.}
+% \end{figure}
+% 
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=\textwidth]{combined_gene_bind.eps}
+% \caption{\small Total read count inside the genes, at each base pair. The read counts are aggregated across all the genes. The x-axis shows the relative distance of a locus from the TSS, which is the real distance in base pair normalized by gene length.}
+% \end{figure}
+
+\end{document}          

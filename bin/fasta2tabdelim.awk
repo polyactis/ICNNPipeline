@@ -1,0 +1,1 @@
+../GenSeq/fasta2tabdelim.awk

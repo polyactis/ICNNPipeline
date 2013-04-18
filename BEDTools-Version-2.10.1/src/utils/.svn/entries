@@ -1,0 +1,156 @@
+10
+
+dir
+588
+file:///u/home/eeskin/namtran/.myrepos/PIPELINE/BEDTools-Version-2.10.1/src/utils
+file:///u/home/eeskin/namtran/.myrepos
+
+
+
+2011-05-21T22:30:28.482149Z
+399
+namtran
+
+bedFilePE
+dir
+
+BamTools
+dir
+
+fileType
+dir
+
+._sequenceUtilities
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+051c8a21a8e77984963b9af9a4e65af6
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+lineFileUtilities
+dir
+
+version
+dir
+
+._genomeFile
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+fc27edfbff067f10991c7bddbbc02e73
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+bedFile
+dir
+
+gzstream
+dir
+
+._bedFilePE
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+27094dd8299787398e90ea4e4052913b
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._BamTools
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+7ac7205dc7a56a46f39ba9870f8e4621
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._lineFileUtilities
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+c53584107ddf99b89050eb434b2bf10d
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+stringUtilities
+dir
+
+._version
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+9407f8593c41115646e6ed6ae45a75be
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+sequenceUtilities
+dir
+
+curl
+dir
+
+tabFile
+dir
+
+._bedFile
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+711e9dd55294086407af0b3e52e0edcd
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+genomeFile
+dir
+
+bedGraphFile
+dir
+
+._.DS_Store
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+aefdc243be88191bfa5458e29f6dc752
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+

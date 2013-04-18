@@ -1,0 +1,1 @@
+../GenSeq/algn2bed.sh

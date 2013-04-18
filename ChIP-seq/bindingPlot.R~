@@ -1,0 +1,62 @@
+batchName <- basename(getwd())
+
+sampleList <- read.table("sampleList.txt")
+sampleList <- sampleList[,1]
+nsample <- length(sampleList)
+
+graphics.off()
+
+x11()
+par(mfrow=c(ceiling(nsample/2),2))
+dupCountDev <- dev.cur()
+
+x11()
+par(mfrow=c(ceiling(nsample/2),2))
+pointDev <- dev.cur()
+
+x11()
+lineDev <- dev.cur()
+
+for (sidx in 1:nsample){
+  curDir = paste(sampleList[sidx],"/",sep="")
+
+  dev.set(dupCountDev)
+  dupCount <- read.table(paste(curDir,"duplicateCount.tsv",sep=""))
+  ix <- sort(dupCount[,1],index.return=TRUE)$ix
+  dupCount <- dupCount[ix,]
+  cumSum <- 1-cumsum(dupCount[,2])/sum(dupCount[,2])
+  plot(dupCount[,1],cumSum,log="xy",xlab="duplicate count",ylab="probability of having at least")
+  
+  count <- read.table(paste(curDir,"tssBindingCount.tsv",sep=""))
+  left <- min(count[,1])
+  right <- max(count[,1])
+              
+  bpRange <- left:right
+  
+  ws <- 100
+  shift <- ws/4
+      
+  T <- as.matrix(rep(0,length(bpRange)))
+
+  T[count[,1]-left+1] <- count[,2]
+
+  dev.set(pointDev)
+  
+  plot(bpRange,T,pch='.',xlab='bp distance relative to TSS',ylab="average read count in 100bp bin")
+
+  middlePoint <- seq(ws/2,length(T)-ws/2,shift)
+  smoothed <- rep(0,length(middlePoint))
+
+  for (i in 1:length(middlePoint)) {
+    m <- middlePoint[i]
+    smoothed[i] <- mean(T[(m-ws/2+1):(m+ws/2)])
+  }
+
+  dev.set(lineDev)
+  if (sidx == 1) {
+    plot(middlePoint,smoothed,type="l")
+  }
+  else {
+  }
+
+}

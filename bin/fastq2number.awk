@@ -1,0 +1,1 @@
+../GenSeq/fastq2number.awk

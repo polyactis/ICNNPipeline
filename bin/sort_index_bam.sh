@@ -1,0 +1,1 @@
+../GenSeq/sort_index_bam.sh

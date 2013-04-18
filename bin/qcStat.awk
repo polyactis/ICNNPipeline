@@ -1,0 +1,1 @@
+../GenSeq/qcStat.awk

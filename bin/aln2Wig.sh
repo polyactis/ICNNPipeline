@@ -1,0 +1,1 @@
+../GenSeq/aln2Wig.sh

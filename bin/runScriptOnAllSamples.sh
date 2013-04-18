@@ -1,0 +1,1 @@
+../GenSeq/runScriptOnAllSamples.sh

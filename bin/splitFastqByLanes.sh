@@ -1,0 +1,1 @@
+../GenSeq/splitFastqByLanes.sh

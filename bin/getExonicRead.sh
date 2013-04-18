@@ -1,0 +1,1 @@
+../RNA-seq/getExonicRead.sh

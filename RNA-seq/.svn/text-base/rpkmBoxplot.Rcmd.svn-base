@@ -1,0 +1,10 @@
+if [ $# -ne 2 ]; then
+	echo SYNOPSIS: `basename $0` nameList color
+	exit 1
+fi
+Rfile=temp.QC.qualBoxPlot.Rmd.`basename $1`.$2
+
+cat ~/PIPELINE/GenSeq/QC.qualBoxPlot.R > $Rfile
+echo oneExperimentQualPlot \(\"$1\",\"$2\"\) >> $Rfile
+
+R CMD BATCH $Rfile

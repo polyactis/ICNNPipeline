@@ -1,0 +1,1 @@
+../GenSeq/Casava.makeFastq.sh

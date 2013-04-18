@@ -1,0 +1,1 @@
+../GenSeq/allBatchesRunScript.sh

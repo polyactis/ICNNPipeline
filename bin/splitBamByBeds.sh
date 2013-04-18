@@ -1,0 +1,1 @@
+../GenSeq/splitBamByBeds.sh

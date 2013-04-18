@@ -1,0 +1,46 @@
+#!/bin/bash - 
+#$ -V
+#$ -b y
+#$ -cwd
+#$ -l h_data=4G
+
+set -e
+source error_handling
+script_start
+
+fastqList=$1
+
+tempDir=`getTempRandName.sh`.workingDir.QC.qualBoxPlot.Rmcd
+
+mkdir $tempDir
+
+file=`basename $fastqList`
+
+for i in `cat $fastqList`; do
+    p=""
+    [ `echo $i | cut -b1` != "/" ] && p=$PWD/
+    ln -s $p$i $tempDir
+    basename $i >> $tempDir/$file
+done
+
+pushd $tempDir
+
+for i in `cat $file`; do
+    fastq2number.sh $i
+done
+
+
+Rfile=temp.QC.nucleotideBoxPlot.Rmd.$file
+
+echo source\(\"~/PIPELINE/GenSeq/QC.nucleotideDistrib.R\"\) > $Rfile
+echo oneExperimentQualPlot \(\"$file\"\) >> $Rfile
+
+R CMD BATCH $Rfile
+
+popd
+
+mv $tempDir/*.png .
+
+rm -rf $tempDir
+
+script_end

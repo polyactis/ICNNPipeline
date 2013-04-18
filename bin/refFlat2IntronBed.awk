@@ -1,0 +1,1 @@
+../GenSeq/refFlat2IntronBed.awk

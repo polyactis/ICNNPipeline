@@ -1,0 +1,351 @@
+10
+
+dir
+588
+file:///u/home/eeskin/namtran/.myrepos/PIPELINE/BEDTools-Version-2.10.1/src
+file:///u/home/eeskin/namtran/.myrepos
+
+
+
+2011-05-21T22:30:28.482149Z
+399
+namtran
+
+._sortBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+2fa9a14ebaeb26e7f47419534ae0d632
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._subtractBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+d389ebb29ecb23fc04ec7b1ef0cad45a
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+windowBed
+dir
+
+._shuffleBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+8d5c4a2d019a4d4661a266489bbe34ea
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._overlap
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+dddda7c85ee54b30bcf424f913742d3d
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._pairToBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+085dbac5745d34f043655d44f67fe4d7
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._maskFastaFromBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+cb32259408ba6bb8ec00641f23f2aa88
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._mergeBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+77be96d21183555d39d4cebdcf6332f7
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+groupBy
+dir
+
+closestBed
+dir
+
+._pairToPair
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+9cd242b2c2d3bea9d8f8fca529359a84
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._intersectBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+f827a1f4f7b3b5307e444a2ec305014d
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+bed12ToBed6
+dir
+
+sortBed
+dir
+
+subtractBed
+dir
+
+bedToIgv
+dir
+
+._closestBed
+file
+
+
+
+
+2010-10-04T15:58:27.000000Z
+7dfadd59a3f86fc8b4c6f58a8a5e85cd
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._slopBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+cc1a605f9f078a6df1d8cdc21cdd1627
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+overlap
+dir
+
+pairToBed
+dir
+
+bamToBed
+dir
+
+._utils
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+09660fd8aedbb5d87f76670638b652f2
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._genomeCoverageBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+0ce5cb15ad23d34f293fa4762b9954f6
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+._coverageBed
+file
+
+
+
+
+2010-10-04T15:58:27.000000Z
+3dedc52562ce121b8835dece1bcfddb7
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+annotateBed
+dir
+
+slopBed
+dir
+
+._bamToBed
+file
+
+
+
+
+2010-10-04T15:58:27.000000Z
+1a2befeb2993daf78ba3d335b05ed275
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+linksBed
+dir
+
+._complementBed
+file
+
+
+
+
+2010-10-04T15:58:27.000000Z
+76ae5638c5ebecb1d3a0040c724795fb
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+fastaFromBed
+dir
+
+._windowBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+d987bebd5b3450ddafff43252b07cb8b
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+utils
+dir
+
+genomeCoverageBed
+dir
+
+fjoin
+dir
+
+coverageBed
+dir
+
+shuffleBed
+dir
+
+._linksBed
+file
+
+
+
+
+2010-10-04T15:58:28.000000Z
+58e1f15cb9b332a08fbb0899657213d9
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+unionBedGraphs
+dir
+
+maskFastaFromBed
+dir
+
+mergeBed
+dir
+
+._fastaFromBed
+file
+
+
+
+
+2010-10-04T15:58:27.000000Z
+34e7bf37c0ca7bb1358f21c0038b35f8
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+pairToPair
+dir
+
+intersectBed
+dir
+
+._.DS_Store
+file
+
+
+
+
+2010-10-04T15:58:27.000000Z
+a79a9cd0056ef48446027f2e3fe41f10
+2011-05-21T22:30:28.482149Z
+399
+namtran
+has-props
+
+bedToBam
+dir
+
+complementBed
+dir
+
