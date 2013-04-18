@@ -1,0 +1,1 @@
+/u/home/eeskin/namtran/panasas/Experiment/Demultiplex/SCRIPT/splitQseqByIndex.sh

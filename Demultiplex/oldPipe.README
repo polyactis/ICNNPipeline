@@ -1,0 +1,123 @@
+Executing Hiseq pipeline for a new project:
+
+CREATE DIRECTORY
+================
+1.) Name the directory where the files will convertered and stored
+example:
+mkdir TestProject
+
+2.) Change into the newly created directory
+cd TestProject
+
+It is here that all executed commands will be given, and will be refered to as the "project home directory".
+
+PREREQUISITE FILES
+==================
+Two files need to be created:
+1.) Sample file
+The sample file details how each sample was sequenced, one per row. The file has three columns: Sample ID, illumina index used for that sample, and the lane(s) used for that sample separated by ",". 
+Example:
+VMT31818        1       1,2,3,4
+VMT18535        1       5,6,7,8
+...
+
+2.) Tag file
+The tag file lists the tags used for sequencing, one per row. 
+Example:
+ACAGTG
+ACTTGA
+...
+
+CONVERT BCL to QSEQ
+===================
+In order to call the Hiseq pipeline to convert BCL to QSEQ the user needs to know the location of the sequencing data "BaseCalls" directory. Once this is known, the Hiseq pipeline for BCL to QSEQ conversion can be executed from the project home directory with: 
+
+1.) Add Hiseq pipeline to PATH
+export PATH=/u/home/eeskin/jwhitake/PIPELINE/Hiseq.v1.0:$PATH
+
+2.) Execute BCL to QSEQ conversion
+Hiseq.qsubBcl2Qseq.sh <path to sequencing data BaseCalls directory> 
+
+Dependency: Hiseq.qsubBcl2Qseq.sh -> bcl2qseq.sh
+
+ 
+
+
+Example:
+Hiseq.qsubBcl2Qseq.sh /u/home/eeskin/dacvs/smb3/Data/Intensities/BaseCalls
+
+DEMULTIPLEX QSEQ FILES
+======================
+Demultiplexing depends on the Tag file provided in the "Prerequisite Files" section. Once this is provided, demultiplexing QSEQ files can be executed from project home directory with:
+
+1.) Add Hiseq pipeline to PATH (if not added already in the previous step)
+export PATH=/u/home/eeskin/jwhitake/PIPELINE/Hiseq.v1.0:$PATH
+
+2.) Execute Demultiplexing:
+Hiseq.qsubDemultiplex.sh <Tag file> 
+
+Example:
+Hiseq.qsubDemultiplex.sh tags.txt
+
+COLLECT FASTQs by SAMPLE
+========================
+Creating a direcotry with FASTQ files collected by sample depends on the Sample file provided in the "Prerequisite Files" section. Once this is provided, merging FASTQ files by sample can be executed from the project home directory with:
+
+1.) Add Hiseq pipeline to PATH (if not added already in the previous step)
+export PATH=/u/home/eeskin/jwhitake/PIPELINE/Hiseq.v1.0:$PATH
+
+2.) Execute:
+Hiseq.qsubCollectSamples.sh <Sample file>
+
+Example:
+Hiseq.qsubCollectSamples.sh samples.txt
+
+MERGE FASTQs by SAMPLE
+======================
+In the previous step, the collection of FASTQ files by sample are output in a directory named "FILES" located in the project home directory. Merging these FASTQ files into a single sample FASTQ requires the path to the "FILES" directory as an input. The merged FASTQ files are output in the current directory (does not need to be the project home directory) and can be executed with:
+
+1.) Add Hiseq pipeline to PATH (if not added already in the previous step)
+export PATH=/u/home/eeskin/jwhitake/PIPELINE/Hiseq.v1.0:$PATH
+
+2.) Execute Merging:
+Hiseq.qsubMergeFastqs.sh <path to FILES directory> 
+
+Example:
+Hiseq.qsubMergeFastqs.sh FILES
+or
+Hiseq.qsubMergeFastqs.sh /u/home/eeskintmp2/jwhitake/test2/FILES
+
+GENERATE FILE STATISTICS
+========================
+The last step of the pipeline is to generate basepair statistics by tile and tag.
+
+For each tile these statistics include:
+- Total BP
+- Total BP that pass filtering
+- Total BP that pass filtering with Phred > 20
+- Total BP that pass filtering with Phred > 30
+
+For each tag these statistics include:
+- Total BP
+- Total BP with Phred > 20
+- Total BP with Phred > 30
+*Note: Statistics are only generated from tags that pass filtering.
+
+These statistics are then aggregated to produce statistics by lane, tile and sample. Statistics are output into a folder labelled "STATS" located in the project home directory. Generating statistics can be executed with:
+
+1.) Add Hiseq pipeline to PATH (if not added already in the previous step)
+export PATH=/u/home/eeskin/jwhitake/PIPELINE/Hiseq.v1.0:$PATH
+
+2.) Generate Tile and Tag Statistics:
+Hiseq.qsubStats1.sh <Tag file>
+
+Example:
+Hiseq.qsubStats1.sh tags.txt
+
+*Note: Steps 2.) must complete before steps 3.) can be executed.
+3.) Generate Lane, Tile, and Sample Statistics:
+Hiseq.qsubStats2.sh <Sample file>
+
+Example:
+Hiseq.qsubStats2.sh samples.txt
+

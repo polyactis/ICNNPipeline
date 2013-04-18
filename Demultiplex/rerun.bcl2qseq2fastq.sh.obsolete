@@ -1,0 +1,50 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE:  rerun.bcl2qseq2fastq.sh
+# 
+#         USAGE:  ./rerun.bcl2qseq2fastq.sh 
+# 
+#   DESCRIPTION:  
+# 
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR: Nam Tran (), namtran@ucla.edu
+#  ORGANIZATION: ICNN, UCLA
+#       CREATED: 11/26/2012 09:00:57 AM PST
+#      REVISION:  ---
+#===============================================================================
+
+#$ -V
+#$ -b y
+#$ -cwd
+#$ -l h_data=4G
+
+set -e
+source error_handling
+script_start
+
+logFile=$1
+
+cwd=`head $logFile | grep -m1 cwd: | cut -d' ' -f2-`
+bclDir=`head $logFile | grep -m 1 bcDir= | cut -d= -f2-`
+lane=`head $logFile | grep -m 1 lane= | cut -d= -f2-`
+export PATH=$PWD/Modified_Joe_Pipeline/:$PATH
+
+pushd $cwd
+
+logDir=$PWD/Log/rerun.bcl2qseq2fastq
+
+mkdir -p $logDir
+
+bcl2qseq2fastq.sh $bclDir $lane >$logDir/`basename $logFile`.out 2>$logDir/`basename $logFile`.err
+
+popd 
+
+script_end
+
+
+
+

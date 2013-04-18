@@ -1,0 +1,70 @@
+PREREQUISITE FILES
+==================
+1) Sample sheet in simple text format: in OpenOffice, or Words, export the sample sheet excel file sent by Clare Osco into TAB separated text file.
+
+Example: in /u/home/eeskin/namtran/panasas/Experiment/Demultiplex/Done/, files "*sample sheet.csv".
+
+2) Flowcell info file: contain the project IDs in the first column, and the location of their flowcell directory in the second column
+
+Example: in /u/home/eeskin/namtran/panasas/Experiment/Demultiplex/Done/, files "*.prj"
+
+RUNNING PIPELINE
+================
+1) Setting path:
+
+export PATH=$PATH:~namtran/panasas/Experiment/Demultiplex/Modified_Joe_Pipeline:~namtran/PIPELINE/bin
+
+2) Convert BCL to QSEQ then demultiplex to fastq (one fastq per index, not yet merged into per-sample file): this step can be run with qsub jobs, or interactively.
+
+a) qsub jobs:
+
+startBCLconversion.sh qsub prj_file sample_sheet_csv_file
+
+b) interactively: 
+
+startBCLconversion.sh bash prj_file sample_sheet_csv_file
+
+Note: the output of this step will be in a directory determined by the info in the prj file. For example, in file Done/2012-255\ sample\ sheet.csv 
+
+    2012-255 smb://kure.genetics.ucla.edu/hiseqdata/HiSeq Scans/Kongo/121115_SN700798R_0096_B_2012-310_D1HTMACXX
+
+then the output will be in Processed/Kongo/121115_SN700798R_0096_B_2012-310_D1HTMACXX/2012-255 (the same subdirectory structure under smb://kure.genetics.ucla.edu/hiseqdata/HiSeq Scans/)
+
+3) Check if all qsub jobs were completed successfully
+
+countJobs.sh failed_qsub_bcl2qseq2fastq.txt demultiplexed_result_dir/Log/bcl2qseq2fastq/Log/bcl2qseq2fastq.sh.e*
+
+3x) Rerun failed jobs with resub.bcl2qseq2fastq.sh
+
+4) Merge per-index fastqs into per-sample fastqs:
+
+Hiseq.qsubCollectSamples.sh demultiplexed_result_dir
+
+5) Check if merging succeeded:
+
+countJobs.sh failed_qsub_mergeFastq.txt demultiplexed_result_dir/Qsub/mergeFastq/Log/mergeFastq.sh.e*
+
+countJobs.sh failed_qsub_gzipit.txt demultiplexed_result_dir/Qsub/mergeFastq/gzipit/Log/gzipit.sh.e*
+
+5x) Rerun (5) if there is a job failed, using resub.mergeFastq.sh and resub.gzipit.sh
+
+6) Clean-up the space if the demultiplexed data is no longer needed (analysis done, clients got data, etc ...)
+
+finalCleanup.sh demultiplexed_result_dir
+
+NOTE: the raw data transferred from the Hiseq server (to hoffman2 under HiSeqScanServer/) can be safely deleted after demultiplexing completed.
+---------------------------------------
+
+
+Example: to be run in /u/home/eeskin/namtran/panasas/Experiment/Demultiplex/
+
+1) export PATH=$PATH:/u/home/eeskin/namtran/panasas/Experiment/Demultiplex/Modified_Joe_Pipeline
+
+2) startBCLconversion.sh qsub Queue/2012-255.prj Queue/2012-255\ sample\ sheet.csv
+
+3) countJobs.sh Processed/Kongo/121115_SN700798R_0096_B_2012-310_D1HTMACXX/2012-255/Log/bcl2qseq2fastq/Log/bcl2qseq2fastq.sh.e*
+
+4) Hiseq.qsubCollectSamples.sh Processed/Kongo/130129_SN700798R_0107_B_2013-021_D1UH9ACXX/2012-255/ 
+
+5) countJobs.sh failed_qsub_mergeFastq.txt Processed/Kongo/121115_SN700798R_0096_B_2012-310_D1HTMACXX/2012-255/Qsub/mergeFastq/Log/mergeFastq.sh.e*
+   countJobs.sh failed_qsub_gzipit.txt Processed/Kongo/121115_SN700798R_0096_B_2012-310_D1HTMACXX/2012-255/Qsub/mergeFastq/gzipit/Log/gzipit.sh.e*
