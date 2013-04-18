@@ -12,7 +12,8 @@ RUNNING PIPELINE
 ================
 1) Setting path:
 
-export PATH=$PATH:~namtran/panasas/Experiment/Demultiplex/Modified_Joe_Pipeline:~namtran/PIPELINE/bin
+export ICNNPipeline=~/ICNNPipeline
+export PATH=$PATH:$ICNNPipeline/Demultiplex/:$ICNNPipeline/bin
 
 2) Convert BCL to QSEQ then demultiplex to fastq (one fastq per index, not yet merged into per-sample file): this step can be run with qsub jobs, or interactively.
 
@@ -58,7 +59,9 @@ NOTE: the raw data transferred from the Hiseq server (to hoffman2 under HiSeqSca
 
 Example: to be run in /u/home/eeskin/namtran/panasas/Experiment/Demultiplex/
 
-1) export PATH=$PATH:/u/home/eeskin/namtran/panasas/Experiment/Demultiplex/Modified_Joe_Pipeline
+1)
+export ICNNPipeline=~/ICNNPipeline
+export PATH=$PATH:$ICNNPipeline/Demultiplex/:$ICNNPipeline/bin
 
 2) startBCLconversion.sh qsub Queue/2012-255.prj Queue/2012-255\ sample\ sheet.csv
 
