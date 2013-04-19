@@ -65,7 +65,7 @@ export PATH=$PATH:$ICNNPipeline/Demultiplex/:$ICNNPipeline/bin
 
 2) startBCLconversion.sh qsub Queue/2012-255.prj Queue/2012-255\ sample\ sheet.csv
 
-3) countJobs.sh Processed/Kongo/121115_SN700798R_0096_B_2012-310_D1HTMACXX/2012-255/Log/bcl2qseq2fastq/Log/bcl2qseq2fastq.sh.e*
+3) countJobs.sh failedJobOutputFile.txt Processed/Kongo/121115_SN700798R_0096_B_2012-310_D1HTMACXX/2012-255/Log/bcl2qseq2fastq/Log/bcl2qseq2fastq.sh.e*
 
 4) Hiseq.qsubCollectSamples.sh Processed/Kongo/130129_SN700798R_0107_B_2013-021_D1UH9ACXX/2012-255/ 
 
