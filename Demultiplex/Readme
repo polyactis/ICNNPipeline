@@ -2,13 +2,43 @@ PREREQUISITE FILES
 ==================
 1) Sample sheet in simple text format: in OpenOffice, or Words, export the sample sheet excel file sent by Clare Osco into TAB separated text file.
 
-Example: in /u/home/eeskin/namtran/panasas/Experiment/Demultiplex/Done/, files "*sample sheet.csv".
+Example: in /u/home/eeskin/namtran/panasas/Experiment/Demultiplex/Done/, files "*sample sheet.csv". Make sure same (sample ID,Index) combos should only appear once in the file and their associated lanes appear in one linei (last 4 lines below). Otherwise only the last line of that (sample ID, Index) would be in the final fastq file.
+
+RunID   SampleProject   sample ID       Description     Index   Lane
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 1     TruSeq DNA PCR Free beta kit    ATTACTCG        2
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 2     TruSeq DNA PCR Free beta kit    TCCGGAGA        2
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 3     TruSeq DNA PCR Free beta kit    CGCTCATT        2
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 4     TruSeq DNA PCR Free beta kit    GAGATTCC        2
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 5     TruSeq DNA PCR Free beta kit    ATTCAGAA        3
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 6     TruSeq DNA PCR Free beta kit    GAATTCGT        3
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 7     TruSeq DNA PCR Free beta kit    CTGAAGCT        3
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Human Sample 8     TruSeq DNA PCR Free beta kit    TAATGCGC        3
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Vervet Sample 1    TruSeq DNA v2   CGGCTATG        4,5,6,7,8
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Vervet Sample 1    TruSeq DNA PCR Free beta kit    TCCGCGAA        4,5,6,7,8
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Vervet Sample 2    TruSeq DNA PCR Free beta kit    TCTCGCGC        4,5,6,7,8
+130206_SN860_0258_A_2013-029A_D1HYNACXX 2013-029A       UNGC Vervet Sample 3    TruSeq DNA PCR Free beta kit    AGCGATAG        4,5,6,7,8
 
 2) Flowcell info file: contain the project IDs in the first column, and the location of their flowcell directory in the second column
 
 Example: in /u/home/eeskin/namtran/panasas/Experiment/Demultiplex/Done/, files "*.prj"
 
 RUNNING PIPELINE
+UNGC_Vervet_Sample_1 CGGCTATG 2
+UNGC_Vervet_Sample_1 TCCGCGAA 2
+UNGC_Vervet_Sample_2 TCTCGCGC 2
+UNGC_Vervet_Sample_3 AGCGATAG 2
+UNGC_Vervet_Sample_1 CGGCTATG 3
+UNGC_Vervet_Sample_1 TCCGCGAA 3
+UNGC_Vervet_Sample_2 TCTCGCGC 3
+UNGC_Vervet_Sample_3 AGCGATAG 3
+UNGC_Vervet_Sample_1 CGGCTATG 4
+UNGC_Vervet_Sample_1 TCCGCGAA 4
+UNGC_Vervet_Sample_2 TCTCGCGC 4
+UNGC_Vervet_Sample_3 AGCGATAG 4
+UNGC_Vervet_Sample_1 CGGCTATG 5
+UNGC_Vervet_Sample_1 TCCGCGAA 5
+UNGC_Vervet_Sample_2 TCTCGCGC 5
+UNGC_Vervet_Sample_3 AGCGATAG 5
 ================
 1) Setting path:
 
