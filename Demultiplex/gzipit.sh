@@ -3,7 +3,7 @@
 #$ -V
 #$ -b y
 #$ -cwd
-#$ -l h_data=4G
+#$ -l h_data=4G,time=23:0:0
 
 
 set -e

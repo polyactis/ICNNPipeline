@@ -3,7 +3,7 @@
 #$ -V
 #$ -b y
 #$ -cwd
-#$ -l h_data=4G,time=4:0:0
+#$ -l h_data=4G,time=23:00:00
 
 set -e
 source error_handling
